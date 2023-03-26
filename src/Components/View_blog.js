@@ -105,6 +105,7 @@ function View_blog() {
     isSpeaking(false)
     window.speechSynthesis.cancel()
   }
+  console.log(mainContent)
 
   return <>
     <Navbar />
