@@ -130,7 +130,7 @@ function View_blog() {
                         <Lottie style={{ width: "4rem", padding: "2px", margin: "1px" }}
                           animationData={speakwave} loop={true} /></div> :
 
-                      <IconButton onClick={() => textTospeech(`Welcome to our blog. title. ${e.Title}.`, `Author .${e.Author}.`, mainContent)}>
+                      <IconButton onClick={() => textTospeech(`Welcome to our blog. title. ${e.Title}.`, `Author .${e.Author}.`,element.textContent)}>
                         <VolumeUpIcon />
                       </IconButton>
                     }
