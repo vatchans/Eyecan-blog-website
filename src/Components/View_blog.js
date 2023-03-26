@@ -62,7 +62,7 @@ function View_blog() {
     }
 
   }
-
+  
   let Delete_blog = async (id) => {
     try {
       let res = await axios.delete(`https://eyecan-backend.onrender.com/users/Delete_Blog/${id}`)
@@ -105,6 +105,8 @@ function View_blog() {
     isSpeaking(false)
     window.speechSynthesis.cancel()
   }
+    let element = fullcontent.current
+   console.log(element.textContent)
   console.log(mainContent)
 
   return <>
