@@ -7,6 +7,7 @@ import { useState } from 'react';
 import { Fade ,Zoom,rubberBand} from "react-awesome-reveal";
 import Navbar from './Navbar';
 import { useNavigate } from "react-router-dom";
+import {toast } from 'react-toastify';
 function Create_Blog() {
     let [Title,setTitle]=useState("")
     let [Author,setauthor]=useState("")
@@ -45,11 +46,12 @@ function Create_Blog() {
             Content
           })
           if(res.status===201){
+            toast.success(res.data.msg)
             navigate('/Blogs')
           }
         }
         catch(error){
-        alert(error.response.data.msg)
+        toast.error(error.response.data.msg)
         }
     }
 
