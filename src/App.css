@@ -60,14 +60,15 @@
 
 .Box {
   width: 28rem;
+  max-width:27rem;
   height: 16rem;
   border: 2px solid silver;
   border-radius: 8px;
-  margin: 5px;
+  margin:1.8rem;
   cursor: pointer;
   padding: 10px;
   margin-bottom: 2px;
-  text-overflow: ellipsis;
+
   overflow: hidden;
 }
 
@@ -549,6 +550,9 @@ html, body {
   }
   .Footer{
     flex-direction: column;
+  }
+  .Box{
+    margin:2px;
   }
   video{
     border-radius:15px;
