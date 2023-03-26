@@ -9,6 +9,7 @@ import { useNavigate } from "react-router-dom";
 import { Fade, Zoom, rubberBand } from "react-awesome-reveal";
 import logo from '../Components/Eyecan-Updated-Logo-e1666782370664.png'
 import Navbar from './Navbar';
+import {toast } from 'react-toastify';
 function Edit_Blog() {
   let [Title,setTitle]=useState("")
   let [Author,setauthor]=useState("")
@@ -39,7 +40,7 @@ function Edit_Blog() {
   }
   let getdata = async (id) => {
     try {
-      let res = await axios.get(`http://localhost:8000/users/view_Blog/${id}`)
+      let res = await axios.get(`https://eyecan-backend.onrender.com/users/view_Blog/${id}`)
       if (res.status === 200) {
         setimage(res.data[0].Image)
         setTitle(res.data[0].Title)
@@ -48,7 +49,7 @@ function Edit_Blog() {
       }
     }
     catch (error) {
-      alert(error.response.data)
+      toast.error(error.response.data)
     }
 
   }
@@ -67,11 +68,12 @@ function Edit_Blog() {
           Content
         })
         if(res.status===201){
+          toast.success(res.data.msg)
           navigate('/Blogs')
         }
       }
       catch(error){
-      alert(error.response.data.msg)
+      toast.error(error.response.data.msg)
       }
   }
 return <>
