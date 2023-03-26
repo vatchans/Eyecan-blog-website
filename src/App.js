@@ -5,6 +5,8 @@ import MyBlogs from './Components/MyBlogs';
 import Create_Blog from './Components/Create_Blog';
 import Edit_Blog from './Components/Edit_Blog';
 import View_blog from './Components/View_blog';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css'
 function App() {
   return (
   <BrowserRouter>
